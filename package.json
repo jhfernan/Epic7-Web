@@ -11,8 +11,11 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "bcrypt": "^3.0.4",
     "cross-env": "^5.2.0",
     "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.4.11",
     "nuxt": "^2.4.3",
     "vuetify": "^1.5.0",
     "vuetify-loader": "^1.2.0"

@@ -1,12 +1,27 @@
 const express = require('express')
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
-const app = express()
 
-// Express Server Routes
+const app = express()
+const mongoose = require('mongoose')
+
+// Express Server Settings and Routes
+const appConfig = require('./config')
 const general = require('./routes/app/index')
+const apiV1 = require('./routes/v1/index')
 
 app.use('/api', general)
+app.use('/api/v1', apiV1)
+
+// Establish Mongodb connection with mongoose
+mongoose.connect(appConfig.db, { useCreateIndex: true, useNewUrlParser: true })
+
+const db = mongoose.connection
+db.on('error', console.error.bind(console, 'connection error:'))
+db.once('open', () => {
+	// require('./seed.js')
+	console.log('Successfully connected to mongo db!')
+})
 
 // Import and Set Nuxt.js options
 let config = require('../nuxt.config.js')
