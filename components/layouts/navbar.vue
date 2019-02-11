@@ -41,7 +41,7 @@ export default {
 				// { name: "Support Us", to: "/support" },
 				{ name: "Login", to: "/login" }
 			]
-		};
+		}
 	}
-};
+}
 </script>

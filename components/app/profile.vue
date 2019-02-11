@@ -38,8 +38,8 @@ import util from "~/components/app/util.js";
 export default {
 	components: { markdown },
 	data() {
-		return { util: util };
+		return { util: util }
 	},
 	props: ["mailto", "user"]
-};
+}
 </script>

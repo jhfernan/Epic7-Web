@@ -30,5 +30,5 @@ export default {
 			default: "The title of our header"
 		}
 	}
-};
+}
 </script>

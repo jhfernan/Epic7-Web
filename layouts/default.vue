@@ -12,5 +12,5 @@ import navigation from "~/components/navigation.vue";
 
 export default {
 	components: { navigation }
-};
+}
 </script>

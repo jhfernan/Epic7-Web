@@ -11,7 +11,7 @@ export default {
 					"snack/showSnack",
 					`${err.response.data.status}: ${err.response.data.message}`
 				)
-			: store.dispatch("snack/showSnack", message);
+			: store.dispatch("snack/showSnack", message)
 	},
 
 	color: score => {
@@ -32,7 +32,7 @@ export default {
 			return [
 				v => !!v || "This is required",
 				v => v === password || "Password does not match"
-			];
+			]
 		},
 		email: [
 			v => !!v || "E-mail is required",
@@ -45,7 +45,7 @@ export default {
 					(v && v.length <= length) ||
 					!v ||
 					`Must be less than ${length} characters`
-			];
+			]
 		},
 		mi: [
 			v => (v && v.length < 2) || !v || "Middle initial must be one character"
