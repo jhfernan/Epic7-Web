@@ -8,7 +8,9 @@
 		<v-data-table class="elevation-1 my-3" :headers="headers" hide-actions :items="heroes" :search="search">
 			<template slot="items" slot-scope="props">
 				<td class="pa-0">
-					<v-img :src="`/heroes/portrait/${props.item.name.replace(/\s+/g, '-').toLowerCase()}.png`" />
+					<nuxt-link exact :to="`/heroes/${props.item._id}`">
+						<v-img :src="`/heroes/portrait/${props.item.name.replace(/\s+/g, '-').toLowerCase()}.png`" />
+					</nuxt-link>
 				</td>
 				<td>
 					<nuxt-link exact :to="`/heroes/${props.item._id}`">
