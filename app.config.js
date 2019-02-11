@@ -43,7 +43,6 @@ let config = {
 
 if (process.env.NODE_ENV == "production") {
 	config.auth.cookie.options.secure = true
-	config.axios.baseURL = process.env.BASE_URL
 	config.middleware = ["redirect-ssl"]
 	// config.socket = 'https://example-cb-api.herokuapp.com/'
 }
