@@ -13,7 +13,6 @@
 					:key="i"
 					router
 					:to="item.to"
-					v-if="!item.auth || $auth.user[item.auth] || $auth.user[item.secondaryAuth]"
 					v-for="(item, i) in items"
 				>
 					<v-list-tile-action>
@@ -48,15 +47,20 @@
 import util from '~/components/app/util'
 
 export default {
+	computed: {
+		items: function () {
+			let result = [
+				{ icon: 'account_circle', title: 'My Profile', to: '/home' },
+				{ icon: 'supervised_user_circle', title: 'Manage Users', to: '/users', auth: 'admin' },
+				{ icon: 'dashboard', title: 'Manage Heroes', to: '/heroes' },
+			]
+			return result.filter(item => !item.auth || this.$auth.user[item.auth] || this.$auth.user[item.secondaryAuth])
+		}
+	},
 	data () {
 		return {
 			avatar: util.avatar(this.$auth.user.email),
 			drawer: true,
-			items: [
-				{ icon: 'account_circle', title: 'My Profile', to: '/home' },
-				{ icon: 'supervised_user_circle', title: 'Manage Users', to: '/users', auth: 'admin' },
-				{ icon: 'dashboard', title: 'Manage Heroes', to: '/heroes' },
-			],
 			title: 'Epic 7 Community'
 		}
 	},

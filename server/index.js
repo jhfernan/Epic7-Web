@@ -3,12 +3,16 @@ const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
 
 const app = express()
+const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 
 // Express Server Settings and Routes
 const appConfig = require('./config')
 const general = require('./routes/app/index')
 const apiV1 = require('./routes/v1/index')
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use('/api', general)
 app.use('/api/v1', apiV1)
