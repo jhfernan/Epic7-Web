@@ -1,2 +1,32 @@
 // Import Vuetify styling
-@require '~vuetify/src/stylus/app.styl'
+@require '~vuetify/src/stylus/main.styl'
+
+// Colors
+$primary = #3F51B5
+$primary-dark = #303F9F
+$accent = #FF9800
+$accent-dark = #F57C00
+$dark = #343A40
+$light = #FFF
+$grey = #EEE
+
+// Spacing
+$xs = 0.75rem
+$sm = 1.25rem
+$md = 1.75rem
+$lg = 2rem
+$xl = 3rem
+
+// Borders
+$sm-border = 2px
+
+// Import Cardboard Custom Styling
+@require './cb/_markdown.styl'
+@require './cb/_reset.styl'
+@require './cb/_transitions.styl'
+
+// Import Vendors
+@require './cb/_prism.styl'
+
+// App Styling
+@require './app/_heroes.styl'
