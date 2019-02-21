@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 
 const statsObject = {
-	_id: false,
 	cp: Number,
 	attack: Number,
 	health: Number,
@@ -41,7 +40,6 @@ const HeroSchema = new mongoose.Schema({
 	maxAwakened: statsObject,
 
 	score: {
-		_id: false,
 		arena: Number,
 		hunt: Number,
 		abyss: Number,
@@ -49,7 +47,6 @@ const HeroSchema = new mongoose.Schema({
 	},
 
 	recommended: {
-		_id: false,
 		sets: String,
 		_artifact: {
 			type: mongoose.Schema.Types.ObjectId,
