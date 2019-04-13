@@ -46,7 +46,7 @@ export default {
 				await this.$auth.loginWith('local', { data: this.form })
 			} catch (err) {
 				err.response
-					? this.err = `Error ${err.response.data.status}: ${err.response.data.message}`
+					? this.err = `Error ${err.response.status}: ${err.response.statusText}`
 					: this.err = 'There was an error during the log in process'
 			}
 		},
