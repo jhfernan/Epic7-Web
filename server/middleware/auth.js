@@ -11,7 +11,7 @@ const auth = {
 		if (token) {
 			jwt.verify(token, config.secret, (err, decoded) => {
 				if (err) {
-					next(util.error(403, 'Token is not valid.'))
+					return next(util.error(403, 'Token is not valid.'))
 				}
 				if (decoded) {
 					let { exp, iat, ...data } = decoded
